@@ -1,3 +1,4 @@
 venv38/
 Pipfile.lock
 __pycache__/
+.metals/
