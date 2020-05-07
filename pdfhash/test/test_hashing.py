@@ -1,4 +1,4 @@
-import fcshash
+import hash_files
 from unittest import TestCase
 import tempfile
 

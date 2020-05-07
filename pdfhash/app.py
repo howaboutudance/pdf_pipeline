@@ -1,10 +1,10 @@
 from flask import Flask, request
 import json
-import fcshash
+import hash_files
 
 app = Flask(__name__)
 
-with open("config/revision.json", "r") as file:
+with open("../config/revision.json", "r") as file:
     rev_dict = json.load(file)
 
 @app.route("/")
@@ -21,7 +21,7 @@ def get_upload_error():
 def upload():
     if "file" in request.files:
         print(request.files["file"])
-        return {"status": "ok", "data": fcshash.get_hashes([request.files["file"]]), **rev_dict}
+        return {"status": "ok", "data": hash_files.get_hashes([request.files["file"]]), **rev_dict}
     else:
         return {"status": "error", **rev_dict}
 

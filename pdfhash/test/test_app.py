@@ -37,3 +37,6 @@ def test_upload_error(client):
     json_data = rv.get_json()
     assert 404 == rv.status_code
     assert "error" == json_data["status"]
+
+def test_metadata_single(client):
+    rv = client.post("")
